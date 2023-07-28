@@ -9,4 +9,4 @@ if char.isupper():
 else:
     print(f'{char} 는 소문자 입니다.')
 
-#항상 주의할 것 내가 실행하고 있는 폴더로 이동 (cd ../6220_if3/) 하고 python sol.py 로 실행 
+#항상 주의할 것 내가 실행하고 있는 폴더로 이동 cd ../6220_if3/
