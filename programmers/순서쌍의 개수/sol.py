@@ -5,7 +5,7 @@ def solution(n):
     for i in range(1,int(n ** 0.5) + 1):  # 루트를 씌우고 소숫점을 버림
        #제곱근까지도 연산을 해봐야하기 때문에 + 1 
        if  n % i == 0:
-            answer += 2
+            answer += 2 #두개 씩 저장
 
             if i * i ==n: # 어떤 수의 제곱근일 경우 
                 answer -= 1
