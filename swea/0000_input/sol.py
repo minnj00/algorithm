@@ -29,9 +29,9 @@ for i in range(TC): #1, 2, 3, 4, 5, ... 이 불러와짐 (총9번)
     else:
         print('짝수')
     
+# 1차원 리스트 input 받기
 
 # numbers = input().split()
-# print(numbers)
 # for number in numbers:
 #     int_num = int(number)
 
@@ -40,7 +40,7 @@ for i in range(TC): #1, 2, 3, 4, 5, ... 이 불러와짐 (총9번)
 
 
 numbers = list(map(int,input().split())) #스플릿 한 것들을 int 씌움 
-print(numbers)
+
 
 for number in numbers:
     if number % 2 ==1:

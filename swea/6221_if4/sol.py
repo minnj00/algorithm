@@ -15,6 +15,7 @@ sys.stdin = open('input.txt')
 
 #선생님 답변
 
+# 1. 모든 경우를 다 적는 경우 
 # man1 = input()
 # man2 = input()
 
@@ -32,7 +33,7 @@ sys.stdin = open('input.txt')
 
 
 # 가위, 바위, 보 
-# 0, 1, 2
+# 0, 1, 2 [가위, 바위, 보] 리스트의 인덱스 
 
 #비긴 경우 제외 경우의 수
 #보, (가위) 2win 2-0 2
