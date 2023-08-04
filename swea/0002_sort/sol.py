@@ -16,7 +16,7 @@ for i in range(len(my_list)-1, 0, -1):  # 점점 줄어드는 만큼 반복함. 
 print(my_list)
 
 
-# 카운팅정렬 : 새로운 리스트에 새로 정렬한 것을 저장
+카운팅정렬 : 새로운 리스트에 새로 정렬한 것을 저장
 counter = [0 for i in range(10)]
 for i in my_list:
     counter[i] += 1
