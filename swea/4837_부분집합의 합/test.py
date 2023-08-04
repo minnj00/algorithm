@@ -6,7 +6,7 @@ n = len(numbers)
 # 결국 목적은 
 
 # 모든 부분집합의 경우의 수 만큼 반복문을 실행 
-for i in range(1<<n):
+for i in range(1<<n): 
     print(i, bin(i)) # bin: 숫자를 2진수로 표현
     temp = []
     for j in range(n):

@@ -2,9 +2,9 @@ import sys
 sys.stdin = open('input.txt')
 from pprint import pprint # 예쁘게 프린트 하는 라이브러리 
 
-TC = int(input())
+T = int(input())
 
-# for tc in range(1,TC+1): # 테스트 케이스 TC개 반복
+# for tc in range(1,T+1): # 테스트 케이스 T번 반복
 #     matrix = []
 #     for i in range(10): #행 생성 반복
 #         row = []
@@ -34,15 +34,16 @@ TC = int(input())
 for tc in range(1, T+1):
     
     N = int(input())
-    board = [[[0 for _ in ragne(10)]] for _ in range(10)]
+    board = [[0 for _ in range(10)] for _ in range(10)]
+    #10 x 10으로 이루어진 2차원 리스트 
     
-    board = []
-    for _ in range(10):
-        temp = []
-        for _ in range(10):
-            for _ in range(10):
-                temp.append(0)
-            board.append(temp)
+    # board = []
+    # for _ in range(10):
+    #     temp = []
+    #     for _ in range(10):
+    #         for _ in range(10):
+    #             temp.append(0)
+    #         board.append(temp)
 
     # 카운팅 정렬 활용 
     for i in range(N):
@@ -57,12 +58,12 @@ for tc in range(1, T+1):
         for x in range(left_top_x, right_bottom_x+1):
             for y in range(left_top_y, right_bottom_y+1):
                 board[x][y] += color 
+   
     count = 0
 
-
-    for x in range(board):
-        for y in range(board[0]):
+    for x in range(len(board)):
+        for y in range(len(board[0])):
             if board[x][y] == 3:
                 count += 1
-
+    print(f'#{tc} {count}')
 

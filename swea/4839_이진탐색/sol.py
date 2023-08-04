@@ -13,7 +13,7 @@ for tc in range(1, T+1):
     # B: B가 찾아야 하는 목적 페이지
     P, A, B= list(map(int,input().split()))
     
-    count_a = 0
+    count_a = 0 
     left = 1 
     right = P 
 

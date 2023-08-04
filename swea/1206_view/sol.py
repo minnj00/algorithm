@@ -20,8 +20,8 @@ for TC in range(1,11):
 
     total = 0 
     #선생님
-    for i in range(building_num):
-        now = buildings[i]
+    for i in range(building_num): # 건물 개수만큼 반복 
+        now = buildings[i] # 기준으로 생각할 빌딩
         if now == 0: #현재 위치에 건물이 없다면 다음 건물로 이동 
             continue
         else:
@@ -31,7 +31,7 @@ for TC in range(1,11):
             for j in range(4):
                 # i: 현재위치
                 # dx[j]: 기준건물 중심으로 좌우 인덱스 
-                comp = buildings[i+dx[j]] - now # j 에는 -2, -1, 1, 2 가 들어올것 
+                comp = buildings[i+dx[j]] # j 에는 -2, -1, 1, 2 가 들어올것 
                 
                 if max_tall < comp:
                     max_tall = comp
@@ -41,4 +41,4 @@ for TC in range(1,11):
                 total += view 
 
     print(f'#{TC} {total}')
-#선생님 코드 조금 수정하기 내 코드랑 섞어서 약간 오류나고 있음
+

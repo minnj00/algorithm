@@ -22,8 +22,10 @@ for tc in range(1, T+1):
     total = 0
     
     #파리채를 그리기 위한 기준점을 잡기 위한 반복문 
-
-    for i in range(N - M + 1):
+    # M x M 의 영역의 파리채이므로 row 와 col 의 범위를 같게 
+    # 0부터 N-M까지 기준인덱스의 범위를 설정하기 위해 range(N-M+1)
+    
+    for i in range(N - M + 1): 
         for j in range(N - M + 1): 
             # 파리채를 그리는 시작점
             # print(matrix[i][j])
