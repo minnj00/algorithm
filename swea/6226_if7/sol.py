@@ -12,6 +12,6 @@ for i in range(1,201):
     if i % 7 == 0 and i % 5 != 0:
         result.append(i)
 
-result = map(str,result)
+result = map(str, result)
 print(','.join(result))
 
