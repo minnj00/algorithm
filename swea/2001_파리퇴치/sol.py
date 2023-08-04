@@ -18,7 +18,7 @@ for tc in range(1, T+1):
     for _ in range(N): 
         row = list(map(int, input().split()))
         matrix.append(row)
-    # pprint(matrix)
+    pprint(matrix)
     total = 0
     
     #파리채를 그리기 위한 기준점을 잡기 위한 반복문 
