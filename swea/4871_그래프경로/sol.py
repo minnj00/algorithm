@@ -41,7 +41,7 @@ for tc in range(1, T+1):
     stack.append(now)
 
     result = 0
-    # 스택이 비어있지 않으면 계속 반복
+    # 스택이 비어있지 않으면 계속 반복. stack 이 비었다는 탐색할 곳 다 했다는 의미
     while len(stack):
         print(stack)
         now = stack.pop() # now 에 stack 의 맨 위에 있는 것이 now 에 할당됨.

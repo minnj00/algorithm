@@ -17,9 +17,9 @@ def search(idx,visited):
         if visited[i] == False: 
             # print(idx, i, '=', numbers[idx][i]
             result.append(numbers[idx][i])
-            visited[i] = True  # 0번째 행을 골랐습니다 를 표시.  
+            visited[i] = True  # 0번째 열을 골랐습니다 를 표시.  
                             
-            search(idx+1, visited) # 두번째줄에서 하나 고름 
+            search(idx+1, visited) # 그 다음 행에서 하나 고름 
             result.pop() 
             visited[i] = False 
         # 재귀 될 때 pop은 아직 실행이 안됐음. 함수가 끝나는 조건은 return 을 만나거나 함수가 끝까지 실행 되어야만함.

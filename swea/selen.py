@@ -7,26 +7,49 @@ from selenium.webdriver.chrome.options import Options
 from dotenv import dotenv_values
 import sys
 from sys import argv
-
-
+import os
+import shutil
+from pathlib import Path
+import time
 
 def main():
     global ID, pw
-    Q_name = argv[1].split('_')[0]
+    prob_name = argv[1]
+    ## 파일 경로 작성
+    
+    parent_path = Path(__file__).parent
+    
+    folder_path = parent_path / prob_name
+
+    
+    # 폴더/파일 생성
+    if os.path.exists(folder_path):
+        shutil.rmtree(folder_path)
+    os.mkdir(folder_path)
+    f1 = open(folder_path / 'sol.py','w')
+
+    # sol.py 작성
+    f2 = open('swea_skeleton.py','r')
+    data = f2.read()
+    f1.write(data)
+    f1.close()
+    f2.close()
+    
+    Q_name = prob_name.split('_')[0]
 
 
     chrome_options = webdriver.ChromeOptions()
+    prefs = {'download.default_directory': str(folder_path)}
+    chrome_options.add_experimental_option('prefs',prefs)
     chrome_options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    # download_path = 'C:/Users/dohyeong/Desktop/camp29/algorithm/swea'
-    # prefs = {'download.default_directory': download_path}
-    # chrome_options.add_experimental_option('prefs', prefs)
+
     # 크롬 드라이버 위치 설정 필요
     browser = webdriver.Chrome(options=chrome_options)
     
     browser.get("https://swexpertacademy.com/main/code/problem/problemList.do")
         
     account = browser.find_element(by.XPATH, '/html/body/nav/div[2]/div/div[2]/a[2]')
-    account.click()    
+    account.click()
 
     config = dotenv_values('.env')
 
@@ -65,19 +88,28 @@ def main():
     try:
         search = browser.find_element(by.XPATH, '//*[@id="searchForm"]/div[2]/div/div/div/div/div[2]/div/div[1]/div[1]/span[2]/a')
         search.click()
-        
+        ## input 파일 다운받기        
+        try:
+            down = browser.find_element(by.XPATH, '/html/body/div[4]/div[2]/div/div[7]/div/div[3]/div[1]/div[1]/div/a[2]')
+            down.click()
+            ## 다운로드 대기 (만약 3초 안에 다운이 완료되지 않는 경우 3초보다 큰 값으로 늘리세요)
+            time.sleep(3)
+            ## input 파일명 input.txt로 변경 (ex. samle_input.txt)
+            for file in os.listdir(folder_path):
+                if file.endswith('input.txt'):
+                    old_file_path = folder_path / file
+                    new_file_path = folder_path / 'input.txt'
+                    os.rename(old_file_path,new_file_path)
+        except NoSuchElementException:
+            print("input 파일이 없습니다.")
 
-        # filename = 'input.txt'
-        # down = browser.find_element(by.XPATH, '/html/body/div[4]/div[2]/div/div[7]/div/div[3]/div[1]/div[1]/div/a[2]')
-        # down.click()
-        
-        
     except NoSuchElementException:
         print("해당 문제가 없습니다. LEARN으로 이동해 주세요")
-
-
+    
+                
     input("프로그램이 완료되었습니다. 용무가 끝나면 엔터키를 눌러 종료해주세요:")    
 
     
 if __name__ == '__main__':
     main()
+    

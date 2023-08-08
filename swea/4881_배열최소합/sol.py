@@ -24,8 +24,8 @@ def search(idx,visited, SUM):
             # print(idx, i)
             # result.append(numbers[idx][i])
             SUM += numbers[idx][i]
-            visited[i] = True  # 0번째 행을 골랐습니다 를 표시.  
-            search(idx+1, visited, SUM) # 두번째줄에서 하나 고름 
+            visited[i] = True  # 0번째 열을 골랐습니다 를 표시.  
+            search(idx+1, visited, SUM) # 다음 행에서 하나 고름 
             # result.pop() 
             SUM -= numbers[idx][i]
             visited[i] = False 

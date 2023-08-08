@@ -15,7 +15,7 @@ for tc in range(1, T+1):
         if char == '(' or char == '{':
             stack.append(char) #stack 에다가 push 함
         # 앞에 있는 친구가 false 면 뒤에 것들은 고려하지도 않음 
-        elif len(stack)(# stack 이 비어있지 않으면) and char == ')' and stack[-1] == '(':
+        elif len(stack) and char == ')' and stack[-1] == '(': # (stack 이 비어있지 않으면 뒤의 조건들에 따라 실행, stack이 비어있으면 넘어감)
             stack.pop()
         elif len(stack) and char == '}' and stack[-1] == '{':
             stack.pop()

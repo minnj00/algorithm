@@ -14,7 +14,7 @@ def dfs(now):
     check_list[now] = True 
     # 현재위치를 기준으로 연결된 노드 찾기 
     for link in nodes[now]:
-        # 방문하지 않은 노드들은 스택에 추가 => 사실상 재귀함수 실행  
+        # 방문하지 않은 노드들은 스택에 추가(sol2에서) => 여기선 재귀함수 실행  
         if not check_list[link]:
             dfs(link)
 

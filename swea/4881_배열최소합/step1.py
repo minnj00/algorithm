@@ -13,7 +13,7 @@ def search(idx):
         return  # return을 만나면 함수가 종료됨
 
     for i in range(N):
-        # print(idx, i, '=', numbers[idx][i]
+        print(idx, i, '=', numbers[idx][i])
         result.append(numbers[idx][i])
         search(idx+1) # 두번째줄에서 하나 고름 
         result.pop() 
