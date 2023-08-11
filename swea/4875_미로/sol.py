@@ -35,7 +35,9 @@ sys.stdin = open(input_path)
     #     now = stack.pop()
     #     x, y= now[0], now[1]
     #     # 한번 그 위치를 지나갈 때마다
-    #     maze[x][y] = 1 
+    #     maze[x][y] = 1  
+    # 나도 이렇게 코드를 짤까 하다가 만약 1로 바꾸면 변동이 생길까봐 못했는데, 0인 경우에만 스택에 저장하는 게 목표이기 떄문에 
+    # check_list 값이 False여서 stack에 넣지 않는 것과 미로위치의 값이 1로 바뀌어서 stack에 넣지 않는 것은 결국 똑같음.
 
     #     # 상하좌우를 바라보는 코드 
     #     for i in range(4):

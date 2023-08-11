@@ -37,7 +37,7 @@ for tc in range(1, T+1):
     stack = []
     
     now = S
-    check_list[now] = True #방문처리 
+    check_list[now] = True #방문처리, 이 문제의 경우에는 check_list가 필요 없지만 간선의 방향이 한방향이더라도 싸이클이 돌게되면 무한히 반복되므로 필요!
     stack.append(now)
 
     result = 0
