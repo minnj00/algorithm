@@ -1,7 +1,6 @@
 def solution(n):
     answer = []
-    for i in range(int(n/2)):
-        answer.append(2*i + 1)
-    if n % 2 == 1:
-        answer.append(n)
-    return answer
+    for i in range(1 ,n+1, 2):
+        answer.append(i)
+    return answer 
+        
