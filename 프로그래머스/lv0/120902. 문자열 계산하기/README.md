@@ -1,6 +1,6 @@
 # [level 0] 문자열 계산하기 - 120902 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120902?language=python3) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/120902) 
 
 ### 성능 요약
 
