@@ -7,5 +7,6 @@ def solution(arr):
             stk.pop(-1)
         else:
             stk.append(arr[i])
-    return [-1] if len(stk) == 0 else stk
+    # return [-1] if len(stk) == 0 else stk
+    return stk or [-1]
         
