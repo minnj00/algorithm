@@ -11,11 +11,14 @@ def solution(board, moves):
                 if not len(stack) or stack[-1] != board[j][i-1]:
                     # 똑같은 인형위에 쌓는 것이 아니라면 넣기
                     stack.append(board[j][i-1])
+                    print(board[j][i-1])
                     board[j][i-1] = 0
                     break
                 elif stack[-1] == board[j][i-1]:
                 # 똑같은 인형이 맨 위에 있다면 stack에 맨위의 숫자를 삭제후 count에 2더하기
+                    board[j][i-1] = 0
                     stack.pop()
                     count += 2
                     break
+                # break
     return count
